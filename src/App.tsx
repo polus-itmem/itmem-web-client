@@ -1,11 +1,19 @@
 import './App.css';
-import React, {useState} from 'react';
-import { Button, TextField } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import {Route, Routes, useNavigate} from "react-router-dom";
+import {routes} from "./data/routes";
+import OrdersPage from "./pages/orders";
+import OrderPage from "./pages/order";
+import {useState} from "react";
+import {Button, TextField} from "@mui/material";
 
 function App() {
   return (
-      <Loginner/>
+      <Routes>
+          <Route path={routes.default} element={<OrdersPage />} />
+          <Route path={routes.orders} element={<OrdersPage/>} />
+          <Route path={routes.order} element={<OrderPage />} />
+          <Route path={routes.login} element={<Loginner />} />
+      </Routes>
   );
 }
 
