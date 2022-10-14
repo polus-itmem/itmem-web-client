@@ -1,0 +1,21 @@
+.center {
+  text-align: center;
+  padding: 400px 0;
+}
+
+.text {
+  font-family: "PolusFonts", "PolusFonts", stem, serif;
+}
+
+.input {
+  height: 70px;
+}
+
+.button {
+  height: 100px;
+}
+
+@font-face {
+  font-family: "PolusFonts";
+  src: local("../public/Stem-Bold.otf");
+}
