@@ -7,6 +7,7 @@ import {Order} from "./models/core";
 import OrderInfoPage from "./pages/orderInfo";
 import {Authorization} from "./pages/authorization";
 import DispatcherOrdersPage from "./pages/dispatcherOrders";
+import DispatcherOrderInfo from "./pages/dispatcherOrderInfo";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path={routes.order} element={<OrderPage/>}/>
           <Route path={routes.login} element={<Authorization/>} />
           <Route path={routes.dispatcherOrders} element = {<DispatcherOrdersPage/>}/>
+          <Route path={routes.dispatcherOrderInfo} element = {<DispatcherOrderInfo/>}/>
       </Routes>
   );
 }

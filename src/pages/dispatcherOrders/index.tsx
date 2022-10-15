@@ -1,5 +1,4 @@
 import {routes} from "../../data/routes";
-import "./styles.css"
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import NavButton from "../../components/nav/navButton";
 import {Order} from "../../models/core";
