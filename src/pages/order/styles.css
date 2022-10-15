@@ -1,0 +1,86 @@
+:root {
+    --border-color: black;
+    --border-radius: 6px;
+    --black-color: #333;
+    --caption-color: #3B5998;
+    color: var(--black-color);
+    font-family: Verdana, sans-serif;
+    font-size: 20px;
+}
+
+main {
+    position: center;
+    margin-top: 15rem;
+    display: flex;
+}
+
+main .request-box {
+    border: 1px solid var(--border-color);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    margin: 0 auto;
+    width: 40rem;
+}
+
+main .request-box .header {
+    text-align: center;
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: bold;
+}
+
+main .request-box .body {
+    border-bottom: 1px solid var(--border-color);
+}
+
+main .request-box .body form .field {
+    padding: 1rem;
+}
+
+main .request-box .body form .field div {
+    text-align: left;
+}
+
+main .request-box .body form .field .place {
+    display: inline;
+}
+
+main .request-box .body form .field .place .select {
+    float: right;
+    margin-top: -1.8rem;
+    width: 25rem;
+    height: 2.5rem;
+}
+
+main .request-box .body form .field .start {
+    float: right;
+    margin-top: -2.2rem;
+    height: 1rem;
+    width: 25rem;
+}
+
+main .request-box .body form .field .finish {
+    float: right;
+    margin-top: -2rem;
+    width: 25rem;
+}
+
+main .request-box .body form .field .chosen-vehicle .select {
+    float: right;
+    margin-top: -1.8rem;
+    width: 25rem;
+    height: 2.5rem;
+}
+
+main .request-box .body .buttons button {
+    margin: 1rem 0 1rem 6.5rem;
+    width: 10rem;
+    height: 2rem;
+    font-size: 0.9rem;
+}
+
+main .request-box .footer {
+    padding: 0.1rem 0 1rem 0;
+}
+
