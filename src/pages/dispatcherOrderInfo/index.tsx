@@ -1,8 +1,16 @@
 import React from 'react';
-import {Box, Button, Stack} from '@mui/material';
-import 'OrderPage.css';
-function OrderPage() {
 
+import {Box, Button, Stack, TextField} from '@mui/material';
+import dayjs, { Dayjs } from 'dayjs';
+import MenuItem from '@mui/material/MenuItem';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import './styles.css';
+import {LocalizationProvider} from "@mui/x-date-pickers";
+import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
+import { createTheme } from '@mui/material/styles';
+
+function DispatcherOrderInfo() {
     let orderNumber: number = 15;
     let workLocation: string = "место 1";
     let timeStart: string = "28:11:2022-18:00";
@@ -58,4 +66,4 @@ function OrderPage() {
     );
 }
 
-export default OrderPage;
+export default DispatcherOrderInfo;
