@@ -1,5 +1,4 @@
 import {Order} from "../../models/core";
-import {useState} from "react";
 
 function statusToString(status: number) {
     let results = ['in-progress', 'end', 'waiting'];
@@ -11,9 +10,9 @@ function OrderClip(props: {order: Order}) {
 
     return (
         <div className='order-clip'>
-            <span className='order-clip-name'>
+            <a href="/orderInfo" className='order-clip-name'>
                 Заказ №<span className='order-clip-id'>{data.id}</span>
-            </span>
+            </a>
             <span> </span>
             <span className='order-clip-status'>
                 {statusToString(data.status)}
