@@ -1,9 +1,9 @@
 import {Order as OrderType} from "../../models/core";
-import {OrderClip} from "../../components/order-clip";
 import {Button} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 import {routes} from "../../data/routes";
 import NavButton from "../../components/nav/navButton";
+import {OrderClip} from "../../components/order-clip";
 import "./styles.css"
 
 class Order {
