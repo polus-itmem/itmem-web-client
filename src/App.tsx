@@ -7,6 +7,7 @@ import {Order} from "./models/core";
 import OrderInfoPage from "./pages/orderInfo";
 import {Authorization} from "./pages/authorization";
 import DispatcherOrdersPage from "./pages/dispatcherOrders";
+import DispatcherOrderInfo from "./pages/dispatcherOrderInfo";
 
 function App() {
     const order: Order = {id: 1, authorId: 2, machinesIds: ["Crane", "Crane", "Car", "AttackHelicopter"], status: "In progress", date: 10000};
@@ -18,6 +19,7 @@ function App() {
           <Route path={routes.orderInfo} element={<OrderInfoPage order={order}/>}/>
           <Route path={routes.login} element={<Authorization/>} />
           <Route path={routes.dispatcherOrders} element = {<DispatcherOrdersPage/>}/>
+          <Route path={routes.dispatcherOrder} element={<DispatcherOrderInfo/>} />
       </Routes>
   );
 }

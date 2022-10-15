@@ -4,12 +4,12 @@ import dayjs, { Dayjs } from 'dayjs';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import '../css/OrderPage.css';
 import {LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import { createTheme } from '@mui/material/styles';
+import "./OrderPage.css"
 
-function OrderPage() {
+function DispatcherOrderPage() {
 
     const buttonsTheme = createTheme({
         palette: {
@@ -81,4 +81,4 @@ function OrderPage() {
     );
 }
 
-export default OrderPage;
+export default DispatcherOrderPage;

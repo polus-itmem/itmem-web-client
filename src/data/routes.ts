@@ -5,5 +5,6 @@ export const routes = {
     order: '/order',
     login: '/login',
     orderInfo: '/orderInfo',
-    dispatcherOrders: '/dispatcherOrders'
+    dispatcherOrders: '/dispatcherOrders',
+    dispatcherOrder: '/dispatcherOrder'
 }
