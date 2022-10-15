@@ -38,6 +38,8 @@ function OrdersPage() {
 
     return (
         <div className='container'>
+            <NavButton className='order-button' link={routes.order}>Заказать</NavButton>
+            <NavButton link={routes.default}>Выйти</NavButton>
             <div className='orders-list'>
                 {dates.map(date => {
                     return <div className='orders-list-date'>
@@ -49,11 +51,9 @@ function OrdersPage() {
                     </div>;
                 })}
             </div>
-            <NavButton className='order-button' link={routes.order}>Заказать</NavButton>
         </div>
     );
 }
 
 
 export default OrdersPage;
-
