@@ -2,6 +2,7 @@ import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 import axios from "axios";
 import {Button, TextField} from "@mui/material";
+import "./styles.css"
 
 function Authorization() {
     const navigate = useNavigate();
@@ -41,22 +42,54 @@ function Authorization() {
 
     if (error) {
         return (
+            <div className="background">
+                <img className="companyLogo" src="http://localhost:3000/images/logo.svg" alt="company logo"/>
+                <div className="center">
+                    <div className="text">
+                        <h1>Пользователь не найден. Пожалуйста, введите корректную пару логин-пароль.</h1>
+                    </div>
+                    <div className="input">
+                        <TextField
+                            error
+                            id="outlined-login-input"
+                            label="Login"
+                            type="login"
+                            autoComplete="current-login"
+                        />
+                    </div>
+                    <div className="input">
+                        <TextField
+                            error
+                            id="outlined-password-input"
+                            label="Password"
+                            type="password"
+                            autoComplete="current-password"
+                        />
+                    </div>
+                    <div className="button">
+                        <Button onClick={checkLoginAndPassword}>Proceed.</Button>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    return (
+        <div className="background">
+            <img className="companyLogo" src="http://localhost:3000/images/logo.svg" alt="company logo"/>
             <div className="center">
                 <div className="text">
-                    <h1>Пользователь не найден. Пожалуйста, введите корректную пару логин-пароль.</h1>
+                    <h1>Пожалуйста, войдите в систему.</h1>
                 </div>
                 <div className="input">
                     <TextField
-                        error
                         id="outlined-login-input"
                         label="Login"
                         type="login"
-                        autoComplete="current-login"
+                        autoComplete="current-password"
                     />
                 </div>
                 <div className="input">
                     <TextField
-                        error
                         id="outlined-password-input"
                         label="Password"
                         type="password"
@@ -66,32 +99,6 @@ function Authorization() {
                 <div className="button">
                     <Button onClick={checkLoginAndPassword}>Proceed.</Button>
                 </div>
-            </div>
-        );
-    }
-    return (
-        <div className="center">
-            <div className="text">
-                <h1>Пожалуйста, войдите в систему.</h1>
-            </div>
-            <div className="input">
-                <TextField
-                    id="outlined-login-input"
-                    label="Login"
-                    type="login"
-                    autoComplete="current-password"
-                />
-            </div>
-            <div className="input">
-                <TextField
-                    id="outlined-password-input"
-                    label="Password"
-                    type="password"
-                    autoComplete="current-password"
-                />
-            </div>
-            <div className="button">
-                <Button onClick={checkLoginAndPassword}>Proceed.</Button>
             </div>
         </div>
     );
