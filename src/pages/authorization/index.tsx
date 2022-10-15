@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import {Button, TextField} from "@mui/material";
 import {userApi} from "../../api";
 import {routes} from "../../data/routes";
+import "./styles.css"
 
 function Authorization() {
     const navigate = useNavigate();
@@ -16,8 +17,9 @@ function Authorization() {
         then(() => navigate(routes.orders)).
         catch(() => setError(true));
     }
-
     return (
+    <div className="background">
+      <img className="companyLogo" src="http://localhost:3000/images/logo.svg" alt="company logo"/>
         <div className="center">
             <div className="text">
                 <h1>{error ?
@@ -49,6 +51,7 @@ function Authorization() {
                 <Button onClick={submitHandle}>Proceed.</Button>
             </div>
         </div>
+       </div>
     );
 }
 
