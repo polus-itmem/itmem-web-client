@@ -9,7 +9,7 @@ import {LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import { createTheme } from '@mui/material/styles';
 
-function Index() {
+function DispatcherOrderInfo() {
 
     const buttonsTheme = createTheme({
         palette: {
@@ -81,4 +81,4 @@ function Index() {
     );
 }
 
-export default Index;
+export default DispatcherOrderInfo;
