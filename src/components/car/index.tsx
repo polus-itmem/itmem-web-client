@@ -1,6 +1,6 @@
 import {Car} from "../../models/core";
 
-function MachineClip(props: {id: number, car: Car}) {
+function CarClip(props: {id: number, car: Car}) {
     return (
         <div className='machine-clip'>
             <span className='machine-clip-name'>
@@ -18,4 +18,4 @@ function MachineClip(props: {id: number, car: Car}) {
     )
 }
 
-export {MachineClip}
+export {CarClip}
