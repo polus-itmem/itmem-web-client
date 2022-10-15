@@ -10,7 +10,7 @@ function OrderClip(props: {order: Order}) {
             </a>
             <span> </span>
             <span className='order-clip-status'>
-                {data.status}
+                {data.car_accept}
             </span>
         </div>
     )

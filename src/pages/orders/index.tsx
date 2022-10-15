@@ -2,17 +2,13 @@ import {routes} from "../../data/routes";
 import NavButton from "../../components/nav/navButton";
 import {OrderClip} from "../../components/order-clip";
 import "./styles.css"
-import Order from "../../models/Order";
+import {Order} from "../../models/core";
 
 function OrdersPage() {
     // TODO: читать из базы данных
     // TODO: сделать стили
 
     let orders: Order[] = [];
-    let n = 100;
-    for (let i = 0; i < n; i++) {
-        orders.push(new Order(i));
-    }
 
     let dates = Array.from(new Set(orders.map(order => order.date)));
 

@@ -2,7 +2,7 @@ import {routes} from "../../data/routes";
 import "./styles.css"
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import NavButton from "../../components/nav/navButton";
-import Order from "../../models/Order";
+import {Order} from "../../models/core";
 
 
 const columns: GridColDef[] = [
@@ -24,9 +24,6 @@ const columns: GridColDef[] = [
 let rows: Order[] = [];
 
 function DispatcherOrdersPage() {
-    for (let i = 0; i < 50; i++) {
-        rows.push(new Order(i));
-    }
     return (
         <div>
             <NavButton link={routes.default}>Выйти</NavButton>
