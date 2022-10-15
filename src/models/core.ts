@@ -1,10 +1,4 @@
-type Order = {
-    id: number,
-    authorId: number,
-    machinesIds: string[],
-    status: string,
-    date: number
-}
+import Order from "./Order"
 
 type Machine = {
     id: string,
