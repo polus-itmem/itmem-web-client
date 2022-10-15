@@ -1,26 +1,8 @@
-import {Order as OrderType} from "../../models/core";
-import {Button} from "@mui/material";
-import {useNavigate} from "react-router-dom";
 import {routes} from "../../data/routes";
 import NavButton from "../../components/nav/navButton";
 import {OrderClip} from "../../components/order-clip";
 import "./styles.css"
-
-class Order {
-    id: number;
-    authorId: number;
-    machinesIds: string[];
-    status: number;
-    date: number;
-
-    public constructor(id: number) {
-        this.id = id;
-        this.authorId = Math.random();
-        this.machinesIds = ["AAA", 'BBB'];
-        this.status = 0;
-        this.date = new Date().getTime();
-    }
-}
+import Order from "../../models/Order";
 
 function OrdersPage() {
     // TODO: читать из базы данных

@@ -8,7 +8,7 @@ function Authorization() {
     let [error, setError] = useState<boolean>(false);
 
     function checkLoginAndPassword() {
-        let givenLogin = (document.getElementById("outlined-password-input") as HTMLInputElement).value;
+        let givenLogin = (document.getElementById("outlined-login-input") as HTMLInputElement).value;
         let givenPassword = (document.getElementById("outlined-password-input") as HTMLInputElement).value;
         let info: any;
 
@@ -29,14 +29,11 @@ function Authorization() {
             .catch(error => {
                 console.log(error);
             });
-
-        let mode = 0;
-        /* TODO: REMOVE MODE VARIABLE */
-
-        if (mode == 0 || info != null && info.type == "user") {
+        console.log(givenLogin);
+        if (givenLogin === "user") { //(mode == 0 || info != null && info.type == "user") {
             navigate("/orders");
-        } else if (mode == 1 || info != null && info.type == "dispatcher") {
-            navigate("/dispatcher/");
+        } else if (givenLogin === "dispatcher") {//(mode == 1 || info != null && info.type == "dispatcher") {
+            navigate("/dispatcherOrders/");
         } else {
             setError(true);
         }

@@ -3,7 +3,6 @@ import {MachineClip} from "../../components/machine";
 import NavButton from "../../components/nav/navButton";
 import {routes} from "../../data/routes";
 
-
 export default function OrderInfoPage(props: {order: Order}) {
     let data = props.order;
     let result = []
