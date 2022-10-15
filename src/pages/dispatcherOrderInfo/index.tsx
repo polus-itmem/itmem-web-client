@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {Box, Button, Stack, TextField} from '@mui/material';
 import dayjs, { Dayjs } from 'dayjs';
 import MenuItem from '@mui/material/MenuItem';
@@ -10,22 +11,6 @@ import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import { createTheme } from '@mui/material/styles';
 
 function DispatcherOrderInfo() {
-
-    const buttonsTheme = createTheme({
-        palette: {
-            primary: {
-                main: '#BFC3C2',
-            },
-        },
-    });
-
-
-    const [position, setPosition] = React.useState('');
-
-    const positionChange = (event: SelectChangeEvent) => {
-        setPosition(event.target.value as string);
-    };
-
     let orderNumber: number = 15;
     let workLocation: string = "место 1";
     let timeStart: string = "28:11:2022-18:00";

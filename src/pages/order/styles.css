@@ -1,37 +1,41 @@
 :root {
-    --border-color: black;
-    --border-radius: 6px;
+    --border-color: #A4A8A7;
     --black-color: #333;
     --caption-color: #3B5998;
+    --background-color: #F9AB24;
+    --background-fowm-color: white;
+    --border-radius: 6px;
+    --fields-width: 20rem;
     color: var(--black-color);
-    font-family: Verdana, sans-serif;
+    font-family: Stem, sans-serif;
     font-size: 20px;
 }
 
 main {
+    font-family: Stem, sans-serif;
     position: center;
-    margin-top: 15rem;
     display: flex;
+    background-color: var(--background-color);
 }
 
 main .request-box {
-    border: 1px solid var(--border-color);
+    background-color: var(--background-fowm-color);
+    border: 4px solid var(--border-color);
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
-    margin: 0 auto;
+    margin: 15rem auto;
     width: 40rem;
 }
 
 main .request-box .header {
     text-align: center;
-    padding: 0.2rem;
+    padding: 0.4rem;
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 4px solid var(--border-color);
     font-weight: bold;
 }
 
 main .request-box .body {
-    border-bottom: 1px solid var(--border-color);
 }
 
 main .request-box .body form .field {
@@ -49,7 +53,7 @@ main .request-box .body form .field .place {
 main .request-box .body form .field .place .select {
     float: right;
     margin-top: -1.8rem;
-    width: 25rem;
+    width: var(--fields-width);
     height: 2.5rem;
 }
 
@@ -57,30 +61,32 @@ main .request-box .body form .field .start {
     float: right;
     margin-top: -2.2rem;
     height: 1rem;
-    width: 25rem;
+    width: var(--fields-width);
 }
 
 main .request-box .body form .field .finish {
     float: right;
     margin-top: -2rem;
-    width: 25rem;
+    width: var(--fields-width);
 }
 
 main .request-box .body form .field .chosen-vehicle .select {
     float: right;
     margin-top: -1.8rem;
-    width: 25rem;
+    width: var(--fields-width);
     height: 2.5rem;
 }
 
 main .request-box .body .buttons button {
-    margin: 1rem 0 1rem 6.5rem;
-    width: 10rem;
+    margin: 1rem 0 1rem 7.5rem;
+    width: 9rem;
     height: 2rem;
     font-size: 0.9rem;
 }
 
-main .request-box .footer {
-    padding: 0.1rem 0 1rem 0;
+
+main .request-box .body .buttons .navButton {
+    color: white;
+    background-color: red;
 }
 

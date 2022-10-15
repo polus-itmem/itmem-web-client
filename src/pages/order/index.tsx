@@ -1,5 +1,5 @@
 import React from 'react';
-import {TextField} from '@mui/material';
+import {Button, TextField} from '@mui/material';
 import dayjs, { Dayjs } from 'dayjs';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
@@ -106,12 +106,9 @@ export default function OrderPage() {
                         </div>
                     </form>
                     <div className="buttons">
-                        <NavButton link={routes.orders}>Отмена</NavButton>
-                        <button className="confirm">Подтвердить</button>
+                        <NavButton link={routes.orders} className="navButton">Отмена</NavButton>
+                        <Button className="confirm" variant="contained" color="success">Подтвердить</Button>
                     </div>
-                </div>
-                <div className="footer">
-
                 </div>
             </div>
         </main>

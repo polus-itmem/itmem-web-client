@@ -68,10 +68,10 @@ html .orderBox main text a {
 }
 
 html footer {
-    margin: 1rem 0 1rem 6rem;
+    margin: 1rem 0 1rem 5.5rem;
 }
 
 html footer .buttons * {
     margin-right: 6rem;
-    width: 8rem;
+    width: 9rem;
 }
