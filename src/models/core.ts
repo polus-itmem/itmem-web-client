@@ -12,6 +12,11 @@ type Machine = {
     park: string
 }
 
+type EnumerateMachines = {
+    id: number,
+    machine: Machine
+}
+
 type Author = {
     id: number,
     name: string

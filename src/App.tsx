@@ -7,13 +7,15 @@ import { useFormControl } from '@mui/material/FormControl';
 import {useState} from "react";
 import {Button, TextField} from "@mui/material";
 import axios from "axios";
+import {Order} from "./models/core";
 
 function App() {
+    let order: Order = {id: 1, authorId: 2, machinesIds: ["Crane", "Crane", "Car", "AttackHelicopter"], status: 0};
   return (
       <Routes>
           <Route path={routes.default} element={<OrdersPage />} />
           <Route path={routes.orders} element={<OrdersPage/>} />
-          <Route path={routes.order} element={<OrderPage />} />
+          <Route path={routes.order} element={<OrderPage order={order}/>}/>
           <Route path={routes.login} element={<Authorization />} />
       </Routes>
   );
@@ -24,8 +26,8 @@ function Authorization() {
     let [error, setError] = useState<boolean>(false);
 
     function checkLoginAndPassword() {
-        let given_login = (document.getElementById("outlined-password-input") as HTMLInputElement).value;
-        let given_password = (document.getElementById("outlined-password-input") as HTMLInputElement).value;
+        let givenLogin = (document.getElementById("outlined-password-input") as HTMLInputElement).value;
+        let givenPassword = (document.getElementById("outlined-password-input") as HTMLInputElement).value;
         let info: any;
         /* :NOTE: CHANGE ANY TO A CONCRETE TYPE */
         axios.post(
@@ -33,8 +35,8 @@ function Authorization() {
             {},
             {
                 params: {
-                    given_login,
-                    given_password
+                    givenLogin,
+                    givenPassword
                 }
             }
         )
