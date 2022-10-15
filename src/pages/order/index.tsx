@@ -72,7 +72,7 @@ export default function OrderPage() {
                                     <DateTimePicker
                                         value={start}
                                         onChange={startChange}
-                                        renderInput={(params) => <TextField {...params} />}
+                                        renderInput={(params: any) => <TextField {...params} />} /*TODO: change any type*/
                                     />
                                 </LocalizationProvider>
                             </div>
@@ -86,7 +86,7 @@ export default function OrderPage() {
                                     <DateTimePicker
                                         value={finish}
                                         onChange={finishChange}
-                                        renderInput={(params) => <TextField {...params} />}
+                                        renderInput={(params: any) => <TextField {...params} />}
                                     />
                                 </LocalizationProvider>
                             </div>
@@ -114,8 +114,6 @@ export default function OrderPage() {
 
                 </div>
             </div>
-
-
         </main>
     );
 }

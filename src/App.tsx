@@ -3,29 +3,55 @@ import {Route, Routes, useNavigate} from "react-router-dom";
 import {routes} from "./data/routes";
 import OrdersPage from "./pages/orders";
 import OrderPage from "./pages/order";
+import { useFormControl } from '@mui/material/FormControl';
 import {useState} from "react";
 import {Button, TextField} from "@mui/material";
+import axios from "axios";
+import {Order} from "./models/core";
+import OrderInfoPage from "./pages/orderInfo";
 
 function App() {
+    const order: Order = {id: 1, authorId: 2, machinesIds: ["Crane", "Crane", "Car", "AttackHelicopter"], status: 0, date: 10000};
   return (
       <Routes>
           <Route path={routes.default} element={<OrdersPage />} />
           <Route path={routes.orders} element={<OrdersPage/>} />
-          <Route path={routes.order} element={<OrderPage />} />
-          <Route path={routes.login} element={<Loginner />} />
+          <Route path={routes.order} element={<OrderPage/>}/>
+          <Route path={routes.orderInfo} element={<OrderInfoPage order={order}/>}/>
+          <Route path={routes.login} element={<Authorization />} />
       </Routes>
   );
 }
 
-function Loginner() {
+function Authorization() {
     const navigate = useNavigate();
     let [error, setError] = useState<boolean>(false);
 
     function checkLoginAndPassword() {
-        if (false /*some magic*/) {
-            navigate("/user");
-        } else if (false /*some magic*/) {
-            navigate("/dispatcher");
+        let givenLogin = (document.getElementById("outlined-password-input") as HTMLInputElement).value;
+        let givenPassword = (document.getElementById("outlined-password-input") as HTMLInputElement).value;
+        let info: any;
+        /* TODO: CHANGE ANY TO A CONCRETE TYPE */
+        axios.post(
+            "expectaservertobehere",
+            {},
+            {
+                params: {
+                    givenLogin,
+                    givenPassword
+                }
+            }
+        )
+            .then(response => {
+                info = JSON.parse(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        if (info != null && info.type == "user") {
+            navigate("/user/" + info.user);
+        } else if (info != null && info.type == "dispatcher") {
+            navigate("/dispatcher/" + info.user);
         } else {
             setError(true);
         }
@@ -40,10 +66,10 @@ function Loginner() {
                 <div className="input">
                     <TextField
                         error
-                        id="outlined-password-input"
+                        id="outlined-login-input"
                         label="Login"
                         type="login"
-                        autoComplete="current-password"
+                        autoComplete="current-login"
                     />
                 </div>
                 <div className="input">
@@ -68,7 +94,7 @@ function Loginner() {
             </div>
             <div className="input">
                 <TextField
-                    id="outlined-password-input"
+                    id="outlined-login-input"
                     label="Login"
                     type="login"
                     autoComplete="current-password"
