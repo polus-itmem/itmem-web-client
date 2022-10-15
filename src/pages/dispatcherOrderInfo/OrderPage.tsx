@@ -1,30 +1,7 @@
 import React from 'react';
-import {Box, Button, Stack, TextField} from '@mui/material';
-import dayjs, { Dayjs } from 'dayjs';
-import MenuItem from '@mui/material/MenuItem';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import '../css/OrderPage.css';
-import {LocalizationProvider} from "@mui/x-date-pickers";
-import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
-import { createTheme } from '@mui/material/styles';
-
+import {Box, Button, Stack} from '@mui/material';
+import 'OrderPage.css';
 function OrderPage() {
-
-    const buttonsTheme = createTheme({
-        palette: {
-            primary: {
-                main: '#BFC3C2',
-            },
-        },
-    });
-
-
-    const [position, setPosition] = React.useState('');
-
-    const positionChange = (event: SelectChangeEvent) => {
-        setPosition(event.target.value as string);
-    };
 
     let orderNumber: number = 15;
     let workLocation: string = "место 1";
