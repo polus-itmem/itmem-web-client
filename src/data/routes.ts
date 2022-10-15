@@ -4,5 +4,6 @@ export const routes = {
     orders: '/orders',
     order: '/order',
     login: '/login',
-    orderInfo: '/orderInfo'
+    orderInfo: '/orderInfo',
+    dispatcherOrders: '/dispatcherOrders'
 }

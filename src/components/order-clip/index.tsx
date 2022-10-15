@@ -1,10 +1,5 @@
 import {Order} from "../../models/core";
 
-function statusToString(status: number) {
-    let results = ['in-progress', 'end', 'waiting'];
-    return results[status];
-}
-
 function OrderClip(props: {order: Order}) {
     let data = props.order;
 
@@ -15,7 +10,7 @@ function OrderClip(props: {order: Order}) {
             </a>
             <span> </span>
             <span className='order-clip-status'>
-                {statusToString(data.status)}
+                {data.status}
             </span>
         </div>
     )
