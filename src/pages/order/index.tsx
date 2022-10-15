@@ -1,9 +1,9 @@
 import React from 'react';
 import {Button, TextField} from '@mui/material';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs, {Dayjs} from 'dayjs';
 import MenuItem from '@mui/material/MenuItem';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import Select, {SelectChangeEvent} from '@mui/material/Select';
+import {DateTimePicker} from '@mui/x-date-pickers/DateTimePicker';
 import './styles.css';
 import {LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
@@ -72,7 +72,8 @@ export default function OrderPage() {
                                     <DateTimePicker
                                         value={start}
                                         onChange={startChange}
-                                        renderInput={(params: any) => <TextField {...params} />} /*TODO: change any type*/
+                                        renderInput={(params: any) =>
+                                            <TextField {...params} />} /*TODO: change any type*/
                                     />
                                 </LocalizationProvider>
                             </div>

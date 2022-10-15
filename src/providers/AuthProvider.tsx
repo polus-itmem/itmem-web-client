@@ -1,12 +1,11 @@
-import {userApi} from "../api";
-import {Auth, User} from "../models/core";
-import React, {useState} from "react";
+import {User} from "../models/core";
+import React from "react";
 
 const AuthContext = React.createContext<User | null>(null);
 
 const STORAGE_USER = "USER";
 
-function AuthProvider({children}: {children: React.ReactNode}) {
+function AuthProvider({children}: { children: React.ReactNode }) {
     // const loginData = localStorage.getItem(STORAGE_USER);
     //
     // const login = (params: Auth) => {

@@ -1,4 +1,3 @@
-import BaseApi from "./BaseApi";
 import UserApi from "./UserApi";
 import CarsApi from "./CarsApi";
 

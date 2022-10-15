@@ -1,4 +1,4 @@
-import axios, {AxiosInstance, AxiosResponse} from "axios";
+import axios, {AxiosInstance} from "axios";
 
 class BaseApi {
     client: AxiosInstance | null = null
@@ -11,18 +11,14 @@ class BaseApi {
         if (!this.client) {
             throw new Error();
         }
-        return this.client.
-        get(url).
-        then(response => response.data);
+        return this.client.get(url).then(response => response.data);
     }
 
     public post<R, T>(url: string, data: T): Promise<R> {
         if (!this.client) {
             throw new Error();
         }
-        return this.client.
-        post(url, data).
-        then(response => response.data);
+        return this.client.post(url, data).then(response => response.data);
     }
 }
 

@@ -52,6 +52,7 @@ html .orderBox main text {
     margin: 0.5rem 2rem 0.5rem 2rem;
 
 }
+
 html .orderBox main text div {
     margin: 1rem 2rem 0.5rem 0;
     border-bottom: 1px solid var(--border-color);

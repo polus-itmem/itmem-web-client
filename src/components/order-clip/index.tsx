@@ -1,6 +1,6 @@
 import {Order} from "../../models/core";
 
-function OrderClip(props: {order: Order}) {
+function OrderClip(props: { order: Order }) {
     let data = props.order;
 
     return (

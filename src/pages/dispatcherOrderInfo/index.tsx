@@ -1,14 +1,7 @@
 import React from 'react';
 
-import {Box, Button, Stack, TextField} from '@mui/material';
-import dayjs, { Dayjs } from 'dayjs';
-import MenuItem from '@mui/material/MenuItem';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import {Box, Button, Stack} from '@mui/material';
 import './styles.css';
-import {LocalizationProvider} from "@mui/x-date-pickers";
-import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
-import { createTheme } from '@mui/material/styles';
 
 function DispatcherOrderInfo() {
     let orderNumber: number = 15;
@@ -31,23 +24,28 @@ function DispatcherOrderInfo() {
             </header>
             <main>
                 <text>
-                    <div> Место работы:</div> <a> {workLocation} </a>
+                    <div> Место работы:</div>
+                    <a> {workLocation} </a>
                 </text>
 
                 <text>
-                    <div> Время начала работ:</div> <a> {timeStart} </a>
+                    <div> Время начала работ:</div>
+                    <a> {timeStart} </a>
                 </text>
 
                 <text>
-                    <div> Время конца работ:</div> <a> {timeFinish} </a>
+                    <div> Время конца работ:</div>
+                    <a> {timeFinish} </a>
                 </text>
 
                 <text>
-                    <div> Используемая техника:</div> <a> {vehicle} </a>
+                    <div> Используемая техника:</div>
+                    <a> {vehicle} </a>
                 </text>
 
                 <text>
-                    <div> Статус заказа:</div> <a> {orderStatus} </a>
+                    <div> Статус заказа:</div>
+                    <a> {orderStatus} </a>
                 </text>
 
             </main>
