@@ -2,7 +2,8 @@ type Order = {
     id: number,
     authorId: number,
     machinesIds: string[],
-    status: number
+    status: number,
+    date: number
 }
 
 type Machine = {
