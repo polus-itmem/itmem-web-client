@@ -1,0 +1,59 @@
+:root {
+    --border-color: black;
+    --border-radius: 6px;
+    --black-color: #333;
+    --caption-color: #3B5998;
+    color: var(--black-color);
+    font-family: Verdana, sans-serif;
+    font-size: 20px;
+}
+
+html {
+    position: relative;
+}
+
+html .orderBox {
+    margin: 13rem auto;
+    min-width: 30rem;
+    max-width: 30rem;
+    border: 1px solid var(--border-color);
+}
+
+html .orderBox header {
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    margin-bottom: 0.5rem;
+}
+
+html .orderBox header .orderNumber {
+
+}
+
+html .orderBox header .exit {
+    float: right;
+    margin-top: -1.5rem;
+}
+
+html .orderBox main {
+    text-align: left;
+    display: grid;
+}
+
+html .orderBox main text {
+    margin: 1rem 2rem 0.5rem 2rem;
+}
+
+html .orderBox main text a {
+    float: right;
+}
+
+html footer {
+    margin: 1rem 0 1rem 5rem;
+}
+
+html footer .buttons * {
+    margin-right: 4rem;
+    width: 8rem;
+}
+
