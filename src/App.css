@@ -4,7 +4,7 @@
 }
 
 .text {
-    font-family: "PolusFonts", "PolusFonts", stem, serif;
+    font-family: "PolusFonts";
 }
 
 .input {
@@ -17,5 +17,5 @@
 
 @font-face {
     font-family: "PolusFonts";
-    src: local("../public/Stem-Bold.otf");
+    src: url("http://localhost:3000/fonts/Stem-Bold.otf");
 }
