@@ -2,6 +2,9 @@ import React from 'react';
 
 import {Box, Button, Stack} from '@mui/material';
 import './styles.css';
+import {styled} from "@mui/material/styles";
+import {ButtonProps} from "@mui/material/Button";
+import {orange} from "@mui/material/colors";
 
 function DispatcherOrderInfo() {
     let orderNumber: number = 15;
@@ -11,12 +14,16 @@ function DispatcherOrderInfo() {
     let vehicle: string = "crane";
     let orderStatus: string = "в обработке";
 
+    const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
+        color: theme.palette.getContrastText(orange[500]),
+    }));
+
     return (
         <html>
-        <Box className="orderBox">
+        <div className="orderBox">
             <header>
                 <div className="orderNumber">
-                    Заказ №{orderNumber}
+                    Заявка №{orderNumber}
                 </div>
                 <Button className="exit">
                     x
@@ -25,41 +32,41 @@ function DispatcherOrderInfo() {
             <main>
                 <text>
                     <div> Место работы:</div>
-                    <a> {workLocation} </a>
+                    <p> {workLocation} </p>
                 </text>
 
                 <text>
                     <div> Время начала работ:</div>
-                    <a> {timeStart} </a>
+                    <p> {timeStart} </p>
                 </text>
 
                 <text>
                     <div> Время конца работ:</div>
-                    <a> {timeFinish} </a>
+                    <p> {timeFinish} </p>
                 </text>
 
                 <text>
                     <div> Используемая техника:</div>
-                    <a> {vehicle} </a>
+                    <p> {vehicle} </p>
                 </text>
 
                 <text>
                     <div> Статус заказа:</div>
-                    <a> {orderStatus} </a>
+                    <p> {orderStatus} </p>
                 </text>
 
             </main>
             <footer>
                 <Stack className="buttons" direction="row" spacing={2}>
-                    <Button className="start" variant="contained" color="error">
+                    <ColorButton className="finish">
                         Завершить
-                    </Button>
-                    <Button className="finish" variant="contained" color="success">
+                    </ColorButton>
+                    <ColorButton className="start">
                         Начать
-                    </Button>
+                    </ColorButton>
                 </Stack>
             </footer>
-        </Box>
+        </div>
         </html>
     );
 }

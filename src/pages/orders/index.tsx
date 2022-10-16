@@ -3,13 +3,13 @@ import NavButton from "../../components/nav/navButton";
 import "./styles.css"
 import {Order} from "../../models/core";
 import {DataGrid, GridColDef, GridValueGetterParams} from "@mui/x-data-grid";
+import {Box} from "@mui/material";
+import {styled} from "@mui/material/styles";
 import ExitButton from "../../components/nav/exitButton";
 import {useEffect, useState} from "react";
 import {carsApi, tasksApi} from "../../api";
 
 function OrdersPage() {
-    // TODO: читать из базы данных
-    // TODO: сделать стили
 
     const columns: GridColDef[] = [
         {field: 'id', headerName: 'ID', width: 70},
@@ -33,12 +33,14 @@ function OrdersPage() {
         tasksApi.getTasks().then(data => setOrders(data)).catch(() => console.log('yes'));
     }, []);
 
+
     return (
         <div>
-            <NavButton className='order-button' link={routes.order}>Заказать</NavButton>
-            <ExitButton link={routes.default}>Выйти</ExitButton>
-
-            <div style={{height: 880, width: '100%'}}>
+            <div className="buttons">
+                <NavButton className='order-button' link={routes.order}>Заказать</NavButton>
+                <ExitButton link={routes.default}>Выйти</ExitButton>
+            </div>
+            <div style={{height: 800, width: '100%'}} className="table">
                 <DataGrid
                     rows={orders}
                     columns={columns}

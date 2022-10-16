@@ -1,27 +1,43 @@
-.companyLogo {
-    width: 300px;
+:root {
+    font-family: "PolusFonts", serif;
+    background-color: #2B2E2D;
+    --orange-color: #F9AB24;
 }
 
 .background {
+    font-family: "PolusFonts", serif;
     height: 940px;
-    background-color: #F9AB24;
+    text-align: center;
 }
 
-.center {
-    text-align: center;
+.background .companyLogo {
+    margin-top: 40px;
+}
+
+.background .center {
+    font-family: "PolusFonts", serif;
     padding: 200px 0;
 }
 
-.text {
-    font-family: "PolusFonts", serif;
+.background .center .text {
+    color: white;
 }
 
-.input {
+.background .center .input {
     height: 70px;
 }
 
-.button {
-    height: 100px;
+.background .center .input * {
+    font-family: "PolusFonts", serif;
+    color: var(--text-color);
+}
+
+.background .center .button {
+    font-family: "PolusFonts", serif;
+    height: 40px;
+    width: 150px;
+    margin: 10px auto;
+    background-color: var(--orange-color);
 }
 
 @font-face {

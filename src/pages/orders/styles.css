@@ -1,25 +1,28 @@
-
-.order-clip {
-    padding-left: 3em;
-    padding-bottom: 0.25em;
+div {
+    color: var(--text-color);
+    font-family: "PolusFonts", serif;
 }
 
-.container {
-
+div .buttons {
+    margin: 0.5rem auto;
 }
 
-.orders-list {
-
+div .buttons  .order-button {
+    font-family: "PolusFonts", serif;
+    height: 40px;
+    width: 150px;
+    margin: 0.1rem 10rem;
+    background-color: var(--orange-color);
+    color: green;
+    font-weight: bold;
 }
 
-.orders-list-date {
-
-}
-
-.orders-list-date-header {
-    color: grey;
-}
-
-.order-button {
-
+div .buttons .exit {
+    font-family: "PolusFonts", serif;
+    height: 40px;
+    width: 150px;
+    margin: 0.1rem 10rem;
+    background-color: var(--orange-color);
+    color: red;
+    font-weight: bold;
 }
