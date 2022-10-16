@@ -3,6 +3,8 @@ import NavButton from "../../components/nav/navButton";
 import "./styles.css"
 import {Order} from "../../models/core";
 import {DataGrid, GridColDef, GridValueGetterParams} from "@mui/x-data-grid";
+import {Box} from "@mui/material";
+import {styled} from "@mui/material/styles";
 
 class OrderFabric {
     public constructor() {
@@ -60,11 +62,14 @@ function OrdersPage() {
 
     console.log(dates);
 
+
     return (
         <div>
-            <NavButton className='order-button' link={routes.order}>Заказать</NavButton>
-            <NavButton link={routes.default}>Выйти</NavButton>
-            <div style={{height: 880, width: '100%'}}>
+            <div className="buttons">
+                <NavButton className='order-button' link={routes.order}>Заказать</NavButton>
+                <NavButton className='exit' link={routes.default}>Выйти</NavButton>
+            </div>
+            <div style={{height: 800, width: '100%'}} className="table">
                 <DataGrid
                     rows={orders}
                     columns={columns}

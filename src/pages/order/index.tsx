@@ -39,7 +39,6 @@ export default function OrderPage() {
         setFinish(newValue);
     };
 
-    /*запрос в бд*/
     let locations: string[] = ["не выбранно", "место 1", "место 2", "место 3"];
     let freeVehicle: string[] = ["cran", "mashina", "mashina228"];
 
@@ -53,12 +52,14 @@ export default function OrderPage() {
                             <div className="location">
                                 <label className="local">Место подачи транспорта:</label>
                             </div>
-                            <div className="place">
+                            <div className="place" >
                                 <Select
                                     value={position}
                                     onChange={positionChange}
-                                    className="select">
-                                    {locations.map(it => <MenuItem value={it}>{it}</MenuItem>)}
+                                    className="select"
+                                    autoFocus
+                                    >
+                                    {locations.map(it => <MenuItem autoFocus className="text" value={it}>{it}</MenuItem>)}
                                 </Select>
                             </div>
                         </div>
@@ -70,10 +71,11 @@ export default function OrderPage() {
 
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                                     <DateTimePicker
+                                        className="dataPik"
                                         value={start}
                                         onChange={startChange}
                                         renderInput={(params: any) =>
-                                            <TextField {...params} />} /*TODO: change any type*/
+                                            <TextField className="dataStart" {...params} />} /*TODO: change any type*/
                                     />
                                 </LocalizationProvider>
                             </div>
