@@ -15,7 +15,7 @@ export default class TasksApi {
 
     // Allowed: none
     public getAllTasks(): Promise<Order[]> {
-        return this.client.get('api/tasks/all');
+        return this.client.get('/api/tasks/all');
     }
 
     public setTask(data: Task): Promise<Order> {

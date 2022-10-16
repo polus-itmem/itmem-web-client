@@ -1,7 +1,6 @@
 import BaseApi from "./BaseApi";
 import {Car, CarType} from "../models/core";
 
-// WARNING: backend is not required
 export default class CarsApi {
     private readonly client: BaseApi;
 

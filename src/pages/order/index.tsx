@@ -38,7 +38,7 @@ export default function OrderPage() {
     };
 
     const [start, setStart] = React.useState<Dayjs | null>(
-        dayjs(new Date().toDateString()),
+        dayjs('2014-08-18T21:11:54'),
     );
 
     const startChange = (newValue: Dayjs | null) => {
@@ -46,7 +46,7 @@ export default function OrderPage() {
     };
 
     const [finish, setFinish] = React.useState<Dayjs | null>(
-        dayjs(new Date().toDateString()),
+        dayjs('2014-08-18T21:11:54'),
     );
 
     const finishChange = (newValue: Dayjs | null) => {
