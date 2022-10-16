@@ -13,7 +13,7 @@ function CarClip(props: { id: number, car: Car }) {
             <span> </span>
             <span className='machine-clip-description'>{props.car.name}</span>
             <span> </span>
-            <span className='machine-clip-description'>{props.car.description}</span>
+            <span className='machine-clip-description'>{props.car.type.description}</span>
         </div>
     )
 }

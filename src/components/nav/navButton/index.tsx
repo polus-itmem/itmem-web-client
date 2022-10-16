@@ -2,14 +2,15 @@ import {useNavigate} from "react-router-dom";
 import {Button} from "@mui/material";
 import React from "react";
 
-export default function NavButton(props: { link: string, className?: string, children?: React.ReactNode }) {
+export default function NavButton({link, className, children}:
+                                      { link: string, className?: string, children?: React.ReactNode }) {
     const navigate = useNavigate();
 
     function navHandle() {
-        navigate(props.link);
+        navigate(link);
     }
 
     return (
-        <Button className={props.className} onClick={navHandle}>{props.children}</Button>
+        <Button className={className} onClick={navHandle}>{children}</Button>
     )
 }

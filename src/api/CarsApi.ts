@@ -1,18 +1,19 @@
 import BaseApi from "./BaseApi";
-import {CarsTypes, TimeInterval} from "../models/core";
+import {Car, CarType} from "../models/core";
 
+// WARNING: backend is not required
 export default class CarsApi {
-    client: BaseApi;
+    private readonly client: BaseApi;
 
     public constructor(url: string) {
         this.client = new BaseApi(url);
     }
 
-    public carsFree(data: TimeInterval): Promise<CarsTypes> {
-        return this.client.post('/api/cars/free', data);
+    public getTypes(): Promise<CarType[]> {
+        return this.client.get('/api/cars/types');
     }
 
-    public carsType(): Promise<CarsTypes> {
-        return this.client.get('/api/cars/types');
+    public getCars(): Promise<Car[]> {
+        return this.client.get('/api/cars/get_cars');
     }
 }

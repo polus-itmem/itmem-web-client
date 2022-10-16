@@ -1,9 +1,11 @@
-import UserApi from "./UserApi";
+import AuthApi from "./AuthApi";
 import CarsApi from "./CarsApi";
+import TasksApi from "./TasksApi";
 
-const server = 'https://7927-85-143-144-46.ngrok.io/';
+const server = 'https://2bac-85-143-144-46.ngrok.io/';
 
-const userApi = new UserApi(server);
+const authApi = new AuthApi(server);
+const tasksApi = new TasksApi(server);
 const carsApi = new CarsApi(server);
 
-export {userApi, carsApi}
+export {authApi, tasksApi, carsApi}
