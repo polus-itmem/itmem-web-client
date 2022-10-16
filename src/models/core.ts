@@ -1,26 +1,16 @@
-// Cars & Drivers
+// Cars
 
 type Car = {
     id: number,
     park: string,
-    description: string,
+    type: CarType,
     name: string,
     number: string,
-    driver: Driver
+    driver: User
 }
 
 type CarType = {
     description: string,
-}
-
-type CarsTypes = {
-    types: CarType[],
-}
-
-type Driver = {
-    id: number,
-    first_name: string,
-    second_name: string,
 }
 
 // Authorization & Login
@@ -35,6 +25,7 @@ type User = {
     role: number,
     first_name: string,
     second_name: string
+    number: string
 }
 
 // Tasks & Orders
@@ -42,13 +33,20 @@ type User = {
 type Order = {
     id: number,
     date: string,
-    car_accept: boolean,
-    car: Car
+    moderate: TaskModerate,
+    place: string,
+    car: Car,
 }
 
 type Task = {
     date: string,
-    car_type: string
+    car_type: string,
+    place: string,
+}
+
+type TaskModerate = {
+    dispatcher: User,
+    status: number,
 }
 
 // Other
@@ -60,8 +58,7 @@ type TimeInterval = {
 
 export type {
     Order, Task,
-    Car, Driver,
-    User, Auth,
+    Car, User, Auth,
     TimeInterval,
-    CarType, CarsTypes,
+    CarType,
 }

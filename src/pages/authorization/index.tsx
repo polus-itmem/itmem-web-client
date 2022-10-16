@@ -1,7 +1,7 @@
 import {useNavigate} from "react-router-dom";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Button, TextField} from "@mui/material";
-import {userApi} from "../../api";
+import {authApi} from "../../api";
 import {routes} from "../../data/routes";
 import { styled } from '@mui/material/styles';
 import { ButtonProps } from '@mui/material/Button';
@@ -16,15 +16,26 @@ function Authorization() {
     let [password, setPassword] = useState<string>('');
 
     function submitHandle() {
-        userApi.login({
+        authApi.authorization({
             login: login,
             password: password
         }).then(() => navigate(routes.orders)).catch(() => setError(true));
     }
 
+
     const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
         color: theme.palette.getContrastText(orange[500]),
     }));
+    
+    useEffect(() => {
+        authApi.getUser().then((user) => {
+            if (user.role === 0) {
+                navigate(routes.orders);
+            } else if (user.role === 1) {
+                navigate(routes.dispatcherOrders);
+            }
+        });
+    }, []);
 
     return (
         <div className="background">
