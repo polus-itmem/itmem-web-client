@@ -3,6 +3,8 @@ import NavButton from "../../components/nav/navButton";
 import "./styles.css"
 import {Order} from "../../models/core";
 import {DataGrid, GridColDef, GridValueGetterParams} from "@mui/x-data-grid";
+import {authApi} from "../../api";
+import ExitButton from "../../components/nav/exitButton";
 
 class OrderFabric {
     public constructor() {
@@ -58,12 +60,10 @@ function OrdersPage() {
 
     let dates = Array.from(new Set(orders.map(order => order.date)));
 
-    console.log(dates);
-
     return (
         <div>
             <NavButton className='order-button' link={routes.order}>Заказать</NavButton>
-            <NavButton link={routes.default}>Выйти</NavButton>
+            <ExitButton link={routes.default}>Выйти</ExitButton>
             <div style={{height: 880, width: '100%'}}>
                 <DataGrid
                     rows={orders}

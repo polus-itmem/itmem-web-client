@@ -1,9 +1,11 @@
 import axios, {AxiosInstance} from "axios";
 
 class BaseApi {
-    client: AxiosInstance | null = null
+    private readonly client: AxiosInstance | null = null
+    private readonly url: string;
 
     public constructor(url: string) {
+        this.url = url;
         this.client = axios.create({baseURL: url});
     }
 
@@ -11,14 +13,28 @@ class BaseApi {
         if (!this.client) {
             throw new Error();
         }
-        return this.client.get(url).then(response => response.data);
+        return this.client.get(url, {
+            headers: {
+                "Access-Control-Allow-Origin": url,
+            },
+            withCredentials: true
+        }).then(response => response.data);
     }
 
-    public post<R, T>(url: string, data: T): Promise<R> {
+    public post<T, R>(url: string, data: T): Promise<R> {
         if (!this.client) {
             throw new Error();
         }
-        return this.client.post(url, data).then(response => response.data);
+        return this.client.post(url, data, {
+            headers: {
+                "Access-Control-Allow-Origin": url,
+            },
+            withCredentials: true
+        }).then(response => {
+            if (response.status === 200) {
+                return response.data;
+            }
+        });
     }
 }
 

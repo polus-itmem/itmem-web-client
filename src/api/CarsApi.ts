@@ -1,8 +1,9 @@
 import BaseApi from "./BaseApi";
 import {CarsTypes, TimeInterval} from "../models/core";
 
+// WARNING: backend is not required
 export default class CarsApi {
-    client: BaseApi;
+    private readonly client: BaseApi;
 
     public constructor(url: string) {
         this.client = new BaseApi(url);

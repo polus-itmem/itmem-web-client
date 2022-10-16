@@ -1,22 +1,18 @@
-import {User} from "../models/core";
-import React from "react";
+import React, {useContext, useEffect} from "react";
+import {authApi} from "../api";
+import {AuthContext, AuthContextType} from "../contexts/AuthContext";
+import {useNavigate} from "react-router-dom";
+import {routes} from "../data/routes";
 
-const AuthContext = React.createContext<User | null>(null);
-
-const STORAGE_USER = "USER";
+const USER = "USER_AUTHORIZED";
 
 function AuthProvider({children}: { children: React.ReactNode }) {
-    // const loginData = localStorage.getItem(STORAGE_USER);
-    //
-    // const login = (params: Auth) => {
-    //     if (loginData) {
-    //         userApi.login(JSON.parse())
-    //     }
-    //     userApi.login(JSON.parse(loginData));
-    // }
-    const user = null;
+    const value: AuthContextType = {
+        getRole: () => authApi.checkAuthorization(),
+        getUser: () => authApi.getUser()
+    }
 
-    return <AuthContext.Provider value={user}>{children}</AuthContext.Provider>
+    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
 export default AuthProvider;

@@ -48,7 +48,8 @@ type Order = {
 
 type Task = {
     date: string,
-    car_type: string
+    car_type: string,
+    place: string,
 }
 
 // Other
