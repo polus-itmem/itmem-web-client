@@ -1,8 +1,6 @@
-import React, {useContext, useEffect} from "react";
+import React from "react";
 import {authApi} from "../api";
 import {AuthContext, AuthContextType} from "../contexts/AuthContext";
-import {useNavigate} from "react-router-dom";
-import {routes} from "../data/routes";
 
 const USER = "USER_AUTHORIZED";
 

@@ -19,13 +19,13 @@ function Authorization() {
     }
 
     useEffect(() => {
-            authApi.getUser().then((user) => {
-                if (user.role === 0) {
-                    navigate(routes.orders);
-                } else if (user.role === 1) {
-                    navigate(routes.dispatcherOrders);
-                }
-            });
+        authApi.getUser().then((user) => {
+            if (user.role === 0) {
+                navigate(routes.orders);
+            } else if (user.role === 1) {
+                navigate(routes.dispatcherOrders);
+            }
+        });
     }, []);
 
     return (

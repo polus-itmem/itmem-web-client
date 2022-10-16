@@ -4,7 +4,7 @@ import React from "react";
 import {authApi} from "../../../api";
 
 export default function ExitButton({link, callback, className, children}:
-                                      { link: string, callback?: () => void, className?: string, children?: React.ReactNode }) {
+                                       { link: string, callback?: () => void, className?: string, children?: React.ReactNode }) {
     const navigate = useNavigate();
 
     function navHandle() {
