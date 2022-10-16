@@ -7,6 +7,7 @@ import { styled } from '@mui/material/styles';
 import { ButtonProps } from '@mui/material/Button';
 import "./styles.css"
 import { orange } from "@mui/material/colors";
+import {User} from "../../models/core";
 
 
 function Authorization() {
@@ -15,26 +16,27 @@ function Authorization() {
     let [login, setLogin] = useState<string>('');
     let [password, setPassword] = useState<string>('');
 
+    function chooseNavigate(user: User) {
+        if (user.role === 0) {
+            navigate(routes.orders);
+        } else if (user.role === 1) {
+            navigate(routes.dispatcherOrders);
+        }
+    }
+
     function submitHandle() {
         authApi.authorization({
             login: login,
             password: password
-        }).then(() => navigate(routes.orders)).catch(() => setError(true));
+        }).then(chooseNavigate).catch(() => setError(true));
     }
-
 
     const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
         color: theme.palette.getContrastText(orange[500]),
     }));
     
     useEffect(() => {
-        authApi.getUser().then((user) => {
-            if (user.role === 0) {
-                navigate(routes.orders);
-            } else if (user.role === 1) {
-                navigate(routes.dispatcherOrders);
-            }
-        });
+        authApi.getUser().then(chooseNavigate);
     }, []);
 
     return (
