@@ -7,12 +7,12 @@
     --border-radius: 6px;
     --fields-width: 20rem;
     color: var(--black-color);
-    font-family: Stem, sans-serif;
+    font-family: "PolusFonts", serif;
     font-size: 20px;
 }
 
 main {
-    font-family: Stem, sans-serif;
+    font-family: "PolusFonts", serif;
 }
 
 main .request-box {
@@ -23,7 +23,7 @@ main .request-box {
 }
 
 main .request-box .header {
-    font-family: Stem, sans-serif;
+    font-family: "PolusFonts", serif;
     font-weight: bold;
     text-align: center;
     border-bottom: 1px solid var(--orange-color);
@@ -36,7 +36,7 @@ main .request-box .body form .field {
 }
 
 main .request-box .body form .field div {
-    font-family: Stem, sans-serif;
+    font-family: "PolusFonts", serif;
     text-align: left;
 }
 
@@ -50,11 +50,13 @@ main .request-box .body form .field .place .select {
     width: var(--fields-width);
     height: 2.5rem;
     border: 1px solid var(--orange-color);
+
 }
 
 main .request-box .body form .field .place .select * {
     color: var(--text-color);
 }
+
 
 main .request-box .body form .field .start {
     float: right;

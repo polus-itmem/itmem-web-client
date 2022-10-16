@@ -41,8 +41,7 @@ html .orderBox header {
 }
 
 html .orderBox header div {
-
-    font-family: Stem, sans-serif;
+    font-family: "PolusFonts", serif;
 }
 
 html .orderBox header .exit {
@@ -59,7 +58,6 @@ html .orderBox main {
 
 html .orderBox main text {
     margin: 0.5rem 2rem 0.5rem 2rem;
-    font-family: "PolusFonts", serif;
 }
 
 html .orderBox main text div {
@@ -88,7 +86,7 @@ html footer .buttons .start {
     height: 40px;
     width: 150px;
     margin: 10px auto;
-    background-color: var(--text-color);
+    background-color: var(--orange-color);
     color: green;
     font-weight: bold;
 }
@@ -98,7 +96,7 @@ html footer .buttons .finish {
     height: 40px;
     width: 160px;
     margin: 10px auto;
-    background-color: var(--text-color);
+    background-color: var(--orange-color);
     color: red;
     font-weight: bold;
 }

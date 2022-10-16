@@ -11,7 +11,7 @@ div .buttons  .order-button {
     font-family: "PolusFonts", serif;
     height: 40px;
     width: 150px;
-    margin: 0 10rem;
+    margin: 0.1rem 10rem;
     background-color: var(--orange-color);
     color: green;
     font-weight: bold;
@@ -21,7 +21,7 @@ div .buttons .exit {
     font-family: "PolusFonts", serif;
     height: 40px;
     width: 150px;
-    margin: 0 10rem;
+    margin: 0.1rem 10rem;
     background-color: var(--orange-color);
     color: red;
     font-weight: bold;
