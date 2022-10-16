@@ -58,7 +58,7 @@ export default function OrderPage() {
 
     useEffect(() => {
         carsApi.getTypes().then(data => setFreeVehicle(data));
-    }, [])
+    }, [start])
 
     function submitHandle() {
         const day = start?.day();
