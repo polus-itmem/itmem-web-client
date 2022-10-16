@@ -38,7 +38,7 @@ function OrdersPage() {
         <div>
             <div className="buttons">
                 <NavButton className='order-button' link={routes.order}>Заказать</NavButton>
-                <ExitButton link={routes.default}>Выйти</ExitButton>
+                <ExitButton className='exit' link={routes.default}>Выйти</ExitButton>
             </div>
             <div style={{height: 800, width: '100%'}} className="table">
                 <DataGrid

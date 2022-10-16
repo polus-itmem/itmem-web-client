@@ -74,7 +74,6 @@ export default function OrderPage() {
 
     return (
         <main>
-            <span className="calendar-box">{calendar()}</span>
             <div className="request-box">
                 <div className="header">Создание заявки</div>
                 <div className="body">
@@ -149,6 +148,7 @@ export default function OrderPage() {
                     </div>
                 </div>
             </div>
+            <div className="calendar-box">{calendar()}</div>
         </main>
     );
 }
