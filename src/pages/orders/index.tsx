@@ -3,36 +3,9 @@ import NavButton from "../../components/nav/navButton";
 import "./styles.css"
 import {Order} from "../../models/core";
 import {DataGrid, GridColDef, GridValueGetterParams} from "@mui/x-data-grid";
-
-class OrderFabric {
-    public constructor() {
-
-    }
-
-    public create(n: number) {
-        let orders: Order[] = [];
-        for (let i = 0; i < n; i++) {
-            orders.push({
-                id: i,
-                date: new Date().toDateString(),
-                car_accept: Math.random() % 2 == 0,
-                car: {
-                    id: i * 100,
-                    park: "центр",
-                    description: "самосвал",
-                    name: `ААА93-${i}`,
-                    number: `${i}${i}${i}`,
-                    driver: {
-                        id: i * 111,
-                        first_name: `Иван-${i}`,
-                        second_name: `Иванович-${i}`
-                    }
-                }
-            })
-        }
-        return orders;
-    }
-}
+import ExitButton from "../../components/nav/exitButton";
+import {useEffect, useState} from "react";
+import {carsApi, tasksApi} from "../../api";
 
 function OrdersPage() {
     // TODO: читать из базы данных
@@ -42,7 +15,7 @@ function OrdersPage() {
         {field: 'id', headerName: 'ID', width: 70},
         {field: 'authorId', headerName: 'Customer', width: 130},
         {field: 'date', headerName: 'Execution time', width: 200},
-        //{field: 'place', headerName: 'Place', width: 130},
+        {field: 'place', headerName: 'Place', width: 130},
         {field: 'status', headerName: 'Status', width: 230},
         {
             field: 'description',
@@ -54,16 +27,17 @@ function OrdersPage() {
         },
     ];
 
-    let orders: Order[] = new OrderFabric().create(100);
+    let [orders, setOrders] = useState<Order[]>([]);
 
-    let dates = Array.from(new Set(orders.map(order => order.date)));
-
-    console.log(dates);
+    useEffect(() => {
+        tasksApi.getTasks().then(data => setOrders(data)).catch(() => console.log('yes'));
+    }, []);
 
     return (
         <div>
             <NavButton className='order-button' link={routes.order}>Заказать</NavButton>
-            <NavButton link={routes.default}>Выйти</NavButton>
+            <ExitButton link={routes.default}>Выйти</ExitButton>
+
             <div style={{height: 880, width: '100%'}}>
                 <DataGrid
                     rows={orders}

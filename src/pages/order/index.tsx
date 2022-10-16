@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     Button,
     Paper,
@@ -19,8 +19,12 @@ import {LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import NavButton from "../../components/nav/navButton";
 import {routes} from "../../data/routes";
+import {carsApi, tasksApi} from "../../api";
+import {CarType} from "../../models/core";
+import {useNavigate} from "react-router-dom";
 
 export default function OrderPage() {
+    const navigate = useNavigate();
     const [position, setPosition] = React.useState('');
 
     const positionChange = (event: SelectChangeEvent) => {
@@ -51,7 +55,23 @@ export default function OrderPage() {
 
     /*запрос в бд*/
     let locations: string[] = ["не выбранно", "место 1", "место 2", "место 3"];
-    let freeVehicle: string[] = ["cran", "mashina", "mashina228"];
+    let [freeVehicle, setFreeVehicle] = useState<CarType[]>([]);
+
+    useEffect(() => {
+        carsApi.getTypes().then(data => setFreeVehicle(data));
+    }, [])
+
+    function submitHandle() {
+        const day = start?.day();
+        const month = start?.month();
+        const year = start?.year();
+
+        tasksApi.setTask({
+            date: `${year}-${month}-${day}`,
+            car_type: vehicle,
+            place: position
+        }).then(() => navigate(routes.orders));
+    }
 
     return (
         <main>
@@ -112,14 +132,18 @@ export default function OrderPage() {
                                     value={vehicle}
                                     onChange={vehicleChange}
                                     className="select">
-                                    {freeVehicle.map(it => <MenuItem value={it}>{it}</MenuItem>)}
+                                    {freeVehicle.map(it =>
+                                        <MenuItem value={it.description}>{it.description}</MenuItem>
+                                    )}
                                 </Select>
                             </div>
                         </div>
                     </form>
                     <div className="buttons">
                         <NavButton link={routes.orders} className="navButton">Отмена</NavButton>
-                        <Button className="confirm" variant="contained" color="success">Подтвердить</Button>
+                        <Button className="confirm" variant="contained" color="success"
+                                onClick={submitHandle}
+                        >Подтвердить</Button>
                     </div>
                 </div>
             </div>
